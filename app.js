@@ -31,7 +31,7 @@ bot.onText(/\/demo(.+)/, (msg, match) => {
   const url = resp;
   
   bot.sendDocument(chatId, doc);
-  bot.sendDocument(chatId, `http://${url}`);
+  bot.sendDocument(chatId, `${url}`);
   bot.sendMessage('this is a demo and read rules ')
   }); 
   bot.onText(/\/star(.+)/, (msg, match) => {
