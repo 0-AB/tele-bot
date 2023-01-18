@@ -18,19 +18,36 @@ bot.onText(/\/demo(.+)/, (msg, match) => {
   const url = 'https://telegram.org/img/t_logo.png';
   bot.sendDocument(chatId, doc);
   bot.sendDocument(chatId, url);
-  bot.sendMessage('this is a demo and read rules ')
+  bot.sendMessage('this is a demo and read rules ');
+      bot.sendMessage('TYPE /download to get dwonload ')
   });
   //
-  bot.onText(/\/download (.+)/, (msg, match) => {
-    const chatId = msg.chat.id;
-    var randomstring = require('randomstring')
+  bot.onText(/\/filedem(.+)/, (msg, match) => {
+  // 'msg' is the received Message from Telegram
+  // 'match' is the result of executing the regexp above on the text content
+  // of the message
 
-    // send a message to the chat acknowledging receipt of their message
-  const resp = match[1];
-  const url = resp;
-  bot.sendDocument(chatId, `${url}`);
-  bot.sendMessage('this is a demo and read rules ')
-  }); 
+  const chatId = msg.chat.id;
+  const resp = match[1]; // the captured "whatever"
+  const dem = 'http://ipv4.download.thinkbroadband.com/50MB.zip'
+  // send back the matched "whatever" to the chat
+  bot.sendMessage(chatId, resp);
+  bot.sendDocument(chatId,dem)
+}); 
+ bot.onText(/\/fileget (.+)/, (msg, match) => {
+  // 'msg' is the received Message from Telegram
+  // 'match' is the result of executing the regexp above on the text content
+  // of the message
+
+  const chatId = msg.chat.id;
+  const resp = match[1]; // the captured "whatever"
+  const dem = resp;
+  // send back the matched "whatever" to the chat
+  bot.sendMessage(chatId, resp);
+  bot.sendDocument(chatId,dem)
+}); 
+
+
   bot.onText(/\/star(.+)/, (msg, match) => {
     const chatId = msg.chat.id;
     const group = ''
@@ -38,7 +55,7 @@ bot.onText(/\/demo(.+)/, (msg, match) => {
     bot.sendDocument(chatId, doc)
      bot.sendContact(chatId,`+917498553750`,`Pawit Sahare [Admin]`)
     // send a message to the chat acknowledging receipt of their message
-    bot.sendMessage(chatId, 'I am alive \n and type /demon or type``` /download url``` or \n example :- /download telegram.org/img/t_logo.png  . and type exact and change url');
+    bot.sendMessage(chatId, 'I am alive \n and type /demon or type``` /fileget url``` or \n example :- /fileget telegram.org/img/t_logo.png  . and type exact and change url');
     bot.sendMessage(chatId, 'You can play game using /play')
     bot.sendMessage(chatId, 'You can also invite player with userid , it wotk on non existing user')
   });
@@ -53,7 +70,7 @@ bot.onText(/\/demo(.+)/, (msg, match) => {
  })
   bot.onText(/\/downloa(.+)/, (msg, match) => { 
       const chatId = msg.chat.id;
-   bot.sendMessage(chatId,'You are send wrong || For example :- ```/download+url ``` \n Note url not contain http:// or http:// just remove https:// http:// from url')
+   bot.sendMessage(chatId,'You are send wrong || For example :- ```/fileget+url ``` \n example /fileget+https://speed.hetzner.de/100MB.bin')
    bot.createChatInviteLink(chatId)
    
   });
