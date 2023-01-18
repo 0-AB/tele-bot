@@ -87,7 +87,7 @@ bot.onText(/\/demo(.+)/, (msg, match) => {
     bot.sendMessage(chatId,gameurl);
     bot.sendPhoto(chatId, `https://images.assetsdelivery.com/compings_v2/putracetol/putracetol1805/putracetol180503254.jpg`)
     bot.sendMessage(chatId,gameurl);
- 
+    bot.sendPhoto(chatId, `https://images.pexels.com/photos/3849168/pexels-photo-3849168.jpeg`)
    });
    
    bot.onText(/\/con(.+)/, (msg, match) => {
@@ -97,20 +97,9 @@ bot.onText(/\/demo(.+)/, (msg, match) => {
 bot.onText(/\/daw(.+)/, (msg, match) => {
     const chatId = msg.chat.id;
     const photo = 'https://images.pexels.com/photos/3849167/pexels-photo-3849167.jpeg'
-    const down = 'http://212.183.159.230/200MB.zip'
+    const down = 'game.html'
      bot.sendDocument(chatId,down)
      bot.sendPhoto(chatId,photo)
    });
 // express js
-   const express = require('express')
-   const app = express()
-   const port = 3000
-   const path1 = require('path')
-   app.get('/', (req, res) => {
-     res.sendFile(path.join(__dirname,'game.html'))
-   })
-   
-   app.listen(port, () => {
-     console.log(`Listening Port ${port}`)
-   })
       
