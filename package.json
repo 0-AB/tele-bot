@@ -1,0 +1,45 @@
+{
+ 
+  "name": "tele-bot",
+ 
+  "version": "1.0.0",
+ 
+  "main": "index.js",
+ 
+  "scripts": {
+ 
+   
+  "start": "node app.js",
+ 
+   
+  "dev": "nodemon app.js"
+ 
+  },
+ 
+  "keywords": [],
+ 
+  "author": "Pawit-Sahare, 0-ab",
+ 
+  "license": "ISC",
+ 
+  "description": "I dont known",
+ 
+  "dependencies": {
+ 
+   
+  "dotenv": "^16.0.3",
+ 
+   
+  "express": "^4.18.2",
+ 
+   
+  "node-telegram-bot-api": "^0.61.0",
+ 
+   
+  "nodemon": "^2.0.20",
+ 
+   
+  "randomstring": "^1.2.3"
+ 
+  }
+}
