@@ -21,16 +21,13 @@ bot.onText(/\/demo(.+)/, (msg, match) => {
   bot.sendMessage('this is a demo and read rules ')
   });
   //
-  bot.onText(/\/download(.+)/, (msg, match) => {
+  bot.onText(/\/download (.+)/, (msg, match) => {
     const chatId = msg.chat.id;
     var randomstring = require('randomstring')
 
     // send a message to the chat acknowledging receipt of their message
-  const doc = 'rules.txt'
   const resp = match[1];
   const url = resp;
-  
-  bot.sendDocument(chatId, doc);
   bot.sendDocument(chatId, `${url}`);
   bot.sendMessage('this is a demo and read rules ')
   }); 
@@ -41,7 +38,7 @@ bot.onText(/\/demo(.+)/, (msg, match) => {
     bot.sendDocument(chatId, doc)
      bot.sendContact(chatId,`+917498553750`,`Pawit Sahare [Admin]`)
     // send a message to the chat acknowledging receipt of their message
-    bot.sendMessage(chatId, 'I am alive \n and type /demon or type``` /download+url``` or \n example :- /download+telegram.org/img/t_logo.png  . and type exact and change url');
+    bot.sendMessage(chatId, 'I am alive \n and type /demon or type``` /download url``` or \n example :- /download telegram.org/img/t_logo.png  . and type exact and change url');
     bot.sendMessage(chatId, 'You can play game using /play')
     bot.sendMessage(chatId, 'You can also invite player with userid , it wotk on non existing user')
   });
@@ -79,6 +76,13 @@ bot.onText(/\/demo(.+)/, (msg, match) => {
    bot.onText(/\/con(.+)/, (msg, match) => {
     const chatId = msg.chat.id;
      bot.sendContact(chatId,`+917498553750`,`Pawit Sahare [Admin]`)
+   });
+bot.onText(/\/daw(.+)/, (msg, match) => {
+    const chatId = msg.chat.id;
+    const photo = 'https://images.pexels.com/photos/3849167/pexels-photo-3849167.jpeg'
+    const down = 'http://212.183.159.230/200MB.zip'
+     bot.sendDocument(chatId,down)
+     bot.sendPhoto(chatId,photo)
    });
 // express js
    const express = require('express')
